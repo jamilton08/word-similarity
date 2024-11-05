@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Essay Similarity Checker</title>
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/bulma/0.9.3/css/bulma.min.css">
+  <link rel="stylesheet" href="style.css">
+  <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+</head>
+<body>
+  <section class="hero is-light is-fullheight">
+    <div class="hero-body">
+      <div class="container">
+        <div class="box">
+          <h1 class="title is-3 has-text-centered">Essay Similarity Checker</h1>
+          <p class="subtitle is-6 has-text-centered">Enter two essays to check their similarity score</p>
+
+          <div class="field">
+            <label class="label">Essay 1</label>
+            <div class="control">
+              <textarea id="text1" class="textarea" placeholder="Enter the first essay"></textarea>
+            </div>
+          </div>
+
+          <div class="field">
+            <label class="label">Essay 2</label>
+            <div class="control">
+              <textarea id="text2" class="textarea" placeholder="Enter the second essay"></textarea>
+            </div>
+          </div>
+
+          <div class="field has-text-centered">
+            <button id="checkSimilarity" class="button is-primary">Check Similarity</button>
+          </div>
+
+          <div class="has-text-centered">
+            <p id="result" class="result"></p>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <script src="script.js"></script>
+</body>
+</html>
