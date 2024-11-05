@@ -83,3 +83,15 @@ function checkSimilarity(){
     const similarity = getSimilarityScore(textCosineSimilarity(text1,text2));
     $("#similarity").text(similarity+"%");
 }
+
+
+$('#checkSimilarity').on('click', () => {
+  const text1 = $('#text1').val();
+  const text2 = $('#text2').val();
+  const similarity = getSimilarityScore(textCosineSimilarity(text1,text2));
+
+    $('#result').text(`Similarity Score: ${similarity.toFixed(2)}%`);
+  } else {
+    $('#result').text('Please enter both essays.');
+  }
+});
