@@ -17,7 +17,6 @@ function wordCountMap(str){
 return wordCount;
 }
 
-wordCountMap = wordCountMap("brodie are you good are  ")
 
 let dict = {}
 
@@ -84,13 +83,27 @@ function checkSimilarity(){
     $("#similarity").text(similarity+"%");
 }
 
+function removeClasses(result, value){
+	result
+	.removeClass('has-text-danger')
+	.removeClass('has-text-primary')
+	.removeClass('has-text-info')
+	.removeClass('has-text-success')
+	
+	if (value < 0.25) result.addClass('has-text-success')
+	else if ( value >= 25 && value < 50) result.addClass('has-text-primary')
+	else if ( value >=50 && value < 75) result.addClass('has-text-info')
+	else result.addClass('has-text-danger')
+}
+
 
 $('#checkSimilarity').on('click', () => {
     if (text1 && text2) {
         const text1 = $('#text1').val();
         const text2 = $('#text2').val();
         const similarity = getSimilarityScore(textCosineSimilarity(text1,text2));
-        $('#result').text(`Similarity Score: ${similarity.toFixed(2)}%`);
+        $('#result').text(`Similarity Score: ${similarity.toFixed(2)}%`)
+	removeClasses($('#result'), similarity)
   } else {
     $('#result').text('Please enter both essays.');
   }
